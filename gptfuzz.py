@@ -43,8 +43,8 @@ def main(args):
         initial_seed=initial_seed,
         mutate_policy=MutateRandomSinglePolicy([
             OpenAIMutatorCrossOver(mutator_model, temperature=0.0),  # for reproduction only, if you want better performance, use temperature>0
-            OpenAIMutatorExpand(mutator_model, temperature=0.0),
-            OpenAIMutatorGenerateSimilar(mutator_model, temperature=0.0),
+            OpenAIMutatorExpand(mutator_model, temperature=1.0),
+            OpenAIMutatorGenerateSimilar(mutator_model, temperature=0.5),
             OpenAIMutatorRephrase(mutator_model, temperature=0.0),
             OpenAIMutatorShorten(mutator_model, temperature=0.0)],
             concatentate=True,
